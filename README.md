@@ -34,4 +34,23 @@ telegram account
 
 The bot present under `fundamental-analysis` folder provides only the fundamental data for the stock\
 whereas the bot present under `technical-analysis` folder provides MACD, RSI and bollinger band diagram\
-in the telegram
+in the telegram.
+
+## Getting stocks earnings report
+
+The bot present under the directory `stocks-earnings-date` sends a message containing the list of\
+companies who have earnings report in the user specified date range.\
+The dates has to be specified in the form `<YYYY-MM-DD>`.
+
+If you want to get list of companies who are reporting earnings for a week then you can spcify\
+`2020-01-01 2021-01-07`.
+
+If you want the earnings list only for a particular day then you can enter\
+`2020-03-18`
+
+If you want to get the list auotmatically every week then you need to setup a crontab to execute\
+the script `earnings_date_cron.py`. I prefer to execute this script on every sunday at 9AM
+
+`0 9 * * 0 python3 earnings_date_cron.py`
+
+Dont forget the to change the `TOKEN` and `MY_CHAT_ID` to your bot api token and your chat id respectively.
